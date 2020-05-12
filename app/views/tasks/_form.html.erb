@@ -6,8 +6,11 @@
   <%= f.label :details, "Task description" %>
   <%= f.text_field :details %>
 
-  <%= f.label :completed, "completed" %>
-  <%= f.check_box :completed %>
+  <% unless @task.new_record? %>
+    <%= f.label :completed, "completed" %>
+    <%= f.check_box :completed %>
+  <% end %>
+
 
   <%= f.submit %>
 
